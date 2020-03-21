@@ -34,11 +34,6 @@ allprojects {
             inheritOutputDirs = false
             outputDir = file("$buildDir/classes/main")
             testOutputDir = file("$buildDir/classes/test")
-//            outputDir = file("$buildDir/classes/kotlin/main")
-//            resourceDirs.add(file("$buildDir/classes/kotlin/main"))
-//
-//            testOutputDir = file("$buildDir/classes/test")
-//            testResourceDirs.add(file("$buildDir/classes/test"))
 
             isDownloadJavadoc = true
             isDownloadSources = true
@@ -68,6 +63,10 @@ subprojects {
     }
     val implementation by configurations
     val testImplementation by configurations
+    val compileOnly by configurations
+    val annotationProcessor by configurations
+    val testCompileOnly by configurations
+    val testAnnotationProcessor by configurations
 
     dependencies {
         // Align versions of all Kotlin components
@@ -95,6 +94,12 @@ subprojects {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
             exclude(module = "mockito-core")
         }
+
+        compileOnly(Libs.lombok)
+        annotationProcessor(Libs.lombok)
+
+        testCompileOnly(Libs.lombok)
+        testAnnotationProcessor(Libs.lombok)
     }
     tasks.test {
         useJUnitPlatform()

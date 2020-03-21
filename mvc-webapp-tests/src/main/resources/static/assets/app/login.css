@@ -1,0 +1,10 @@
+.login-form {
+    width: 350px;
+    border: 1px solid black;
+    padding: 2em;
+    margin: 10em auto auto auto ;
+
+}
+.login-form .forgot-password-wrapper {
+    height: 1em;
+}
