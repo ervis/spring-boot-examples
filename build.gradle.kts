@@ -32,12 +32,13 @@ allprojects {
     idea {
         module {
             inheritOutputDirs = false
-
-            outputDir = file("$buildDir/classes/kotlin/main")
-            resourceDirs.add(file("$buildDir/classes/kotlin/main"))
-
+            outputDir = file("$buildDir/classes/main")
             testOutputDir = file("$buildDir/classes/test")
-            testResourceDirs.add(file("$buildDir/classes/test"))
+//            outputDir = file("$buildDir/classes/kotlin/main")
+//            resourceDirs.add(file("$buildDir/classes/kotlin/main"))
+//
+//            testOutputDir = file("$buildDir/classes/test")
+//            testResourceDirs.add(file("$buildDir/classes/test"))
 
             isDownloadJavadoc = true
             isDownloadSources = true
