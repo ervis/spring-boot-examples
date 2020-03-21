@@ -4,7 +4,7 @@ const browserSync = require('browser-sync').create();
 
 gulp.task('watch', () => {
     browserSync.init({proxy: 'localhost:8081',});
-    gulp.watch(['src/main/resources/**'], gulp.series('copy-resources'));
+    gulp.watch(['src/main/resources/**'], gulp.series('copy-resources-and-reload'));
 });
 //replace with build/resources/main/ for netBeans
 //.pipe(gulp.dest('out/production/resources/'));
