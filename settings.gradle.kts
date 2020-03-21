@@ -10,5 +10,6 @@
 rootProject.name = "spring-boot-examples"
 include(
         "test-simple",
-        "jpa-tests"
+        "jpa-tests",
+        "freemarker-tests"
 )
