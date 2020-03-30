@@ -94,6 +94,11 @@ subprojects {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
             exclude(module = "mockito-core")
         }
+        // security in tests
+        implementation("org.springframework.security:spring-security-test")
+        testImplementation("org.mockito:mockito-junit-jupiter:3.2.4")
+        testImplementation("org.hamcrest:hamcrest:2.1")
+
 
         compileOnly(Libs.lombok)
         annotationProcessor(Libs.lombok)

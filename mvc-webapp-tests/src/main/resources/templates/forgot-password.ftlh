@@ -2,7 +2,7 @@
 
 <#assign
 page={"title": "Forgot your password?",
-"pageId": "homepage",
+"pageId": "forgot-password-page",
 "cssFiles": [],
 "javascriptFiles": []}
 >

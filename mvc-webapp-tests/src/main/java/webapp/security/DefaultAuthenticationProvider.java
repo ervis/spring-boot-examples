@@ -5,9 +5,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
 
-@Component
 public class DefaultAuthenticationProvider implements AuthenticationProvider {
 
     private static final String PRINCIPAL = "login@mail.com";
