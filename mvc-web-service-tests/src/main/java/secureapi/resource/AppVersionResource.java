@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AppVersionController {
+public class AppVersionResource {
 
     @GetMapping("/version")
     public ResponseEntity<Map<String, String>> home() {
