@@ -1,0 +1,15 @@
+{
+  "name": "mvc-web-freemarker",
+  "version": "1.0.0",
+  "description": "Use gulp as buid-tool",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ervis Zyka <erviszyka@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2"
+  }
+}
