@@ -17,7 +17,7 @@ public class DefaultWebSecurityConfigurerAdapter extends WebSecurityConfigurerAd
         http
                 .authorizeRequests()
                 .antMatchers(
-                        "/forgot-password", "/"
+                        "/forgot-password", "/", "/error"
                 ).permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -33,7 +33,7 @@ public class DefaultWebSecurityConfigurerAdapter extends WebSecurityConfigurerAd
     @Override
     public void configure(WebSecurity web) throws Exception {
         web
-                .ignoring()
+                .ignoring()// this is ignored
                 .antMatchers("/static/**")
                 .antMatchers("/assets/**");
     }

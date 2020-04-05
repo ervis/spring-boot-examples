@@ -6,7 +6,7 @@
 <#assign
 page={"title": "${title}",
 "pageId": "homepage",
-"cssFiles": ["/assets/app/login.css"],
+"cssFiles": [],
 "javascriptFiles": []}
 >
 <@html.body page=page>

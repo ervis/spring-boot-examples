@@ -11,5 +11,6 @@ rootProject.name = "spring-boot-examples"
 include(
         "jpa-tests",
         "mvc-web-service-tests",
-        "mvc-webapp-tests"
+        "mvc-webapp-tests",
+        "spring-saga-pattern"
 )

@@ -1,4 +1,5 @@
+val implementation by configurations
+
 dependencies {
-    implementation(SpringBootStarter.freemarker)
     implementation(SpringBootStarter.web)
 }

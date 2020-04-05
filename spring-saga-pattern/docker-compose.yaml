@@ -1,0 +1,7 @@
+version: '3'
+services:
+  wiremock_saga:
+    image: ervis/wiremock-saga
+    container_name: wiremock-saga
+    ports:
+      - "9000:8080"
