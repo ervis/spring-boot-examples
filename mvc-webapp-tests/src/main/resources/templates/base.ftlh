@@ -62,6 +62,7 @@
     <script type="javascript" src="/assets/vendors/jquery-3.3.1.js"></script>
     <script type="javascript" src="/assets/vendors/popper.js"></script>
     <script type="javascript" src="/assets/vendors/bootstrap/js/bootstrap.js"></script>
+    <script type="javascript" src="/assets/app/js/main.js"></script>
     <#list page.javascriptFiles as script>
         <script type="javascript" src="${script}"/>
     </#list>
