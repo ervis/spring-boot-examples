@@ -1,12 +1,11 @@
+$color-black: #000;
+
 .login-form {
-  width: 350px;
-  border: 1px solid black;
+  border: 1px solid $color-black;
+  margin: 10em auto auto;
   padding: 2em;
-  margin: 10em auto auto auto;
+  width: 350px;
 
-}
-
-.login-form {
   .forgot-password-wrapper {
     height: 1em;
   }

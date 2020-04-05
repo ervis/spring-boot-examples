@@ -9,7 +9,6 @@
 
         <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="/assets/app/css/main.css">
-<#--        <link rel="stylesheet" href="/assets/css/app.css">-->
         <#list page.cssFiles as css>
             <link rel="stylesheet" href="${css}">
         </#list>
