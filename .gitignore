@@ -1,8 +1,7 @@
-# Ignore Gradle project-specific cache directory
-.gradle
-# Ignore Gradle build output directory
-build
-out
-/.idea/
+assets/
 node_modules/
-static/
+build/
+dist/
+out/
+.idea/
+.gradle/
