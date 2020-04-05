@@ -63,8 +63,6 @@ gulp.task(task.watch, () => {
 
 gulp.task(task.sass, () => {
     return gulp.src(`${styles.input}/**/*.s+(a|c)ss`)
-        .pipe(sassLint())
-        .pipe(sassLint.format())
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(concat(styles.file))
