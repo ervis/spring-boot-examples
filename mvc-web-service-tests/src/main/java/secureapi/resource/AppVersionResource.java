@@ -14,6 +14,5 @@ public class AppVersionResource {
         return ResponseEntity.ok(Map.of(
                 "version", "1.0.0"
         ));
-
     }
 }
