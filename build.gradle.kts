@@ -26,6 +26,8 @@ plugins {
     id(Plugins.kotlinSpring) version PluginVersion.kotlin apply false
 
     id(Plugins.kotlinKapt) version PluginVersion.kotlin apply false
+
+    id(Plugins.gitProperties) version PluginVersion.gitProperties apply false
 }
 
 allprojects {
@@ -54,6 +56,8 @@ subprojects {
         plugin(Plugins.kotlinKapt)
         plugin(Plugins.kotlinNoArg)
         plugin(Plugins.kotlinJpa)
+
+        plugin(Plugins.gitProperties)
 
     }
     repositories {

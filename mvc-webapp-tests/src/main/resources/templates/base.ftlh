@@ -6,6 +6,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="version" content="${serverVersion}">
 
         <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="/assets/app/css/main.css">

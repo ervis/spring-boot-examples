@@ -11,6 +11,7 @@ object Plugins {
     const val kotlinNoArg = "org.jetbrains.kotlin.plugin.noarg"
     const val kotlinAllOpen = "org.jetbrains.kotlin.plugin.allopen"
     const val kotlinJpa = "org.jetbrains.kotlin.plugin.jpa"
+    const val gitProperties = "com.gorylenko.gradle-git-properties"
 
 }
 
@@ -18,6 +19,7 @@ object PluginVersion {
     const val kotlin = "1.3.72"
     const val springDependencyManagement = "1.0.9.RELEASE"
     const val springBoot = "2.2.5.RELEASE"
+    const val gitProperties = "2.2.2"
 }
 
 object Libs {
