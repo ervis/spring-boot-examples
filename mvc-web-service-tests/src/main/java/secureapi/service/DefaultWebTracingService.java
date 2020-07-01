@@ -2,6 +2,8 @@ package secureapi.service;
 
 import org.springframework.stereotype.Service;
 
+import brave.Tracer;
+
 @Service
 public class DefaultWebTracingService implements TracingService {
     private final Tracer tracer;
@@ -12,6 +14,11 @@ public class DefaultWebTracingService implements TracingService {
 
     @Override
     public String traceId() {
-        return tracer.currentSpan().;
+        return tracer.currentSpan().context().traceIdString();
+    }
+
+    @Override
+    public String spanId() {
+        return tracer.currentSpan().context().spanIdString();
     }
 }

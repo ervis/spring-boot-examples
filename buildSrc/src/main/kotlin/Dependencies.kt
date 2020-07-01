@@ -26,7 +26,7 @@ object Libs {
     const val sleuth = "org.springframework.cloud:spring-cloud-starter-sleuth"
     const val kotlinStdJDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect"
-    const val kotlinJackson = "com.fasterxml.jackson.module:jackson-module-kotlin\""
+    const val kotlinJackson = "com.fasterxml.jackson.module:jackson-module-kotlin"
 }
 
 object TestLibs {
