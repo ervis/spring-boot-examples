@@ -1,19 +1,19 @@
 # Handling long running requests
 
-Imagine that you work for an e-shop company and you need to send
+Imagine that you work for an e-shop company, and you need to send
 daily orders to a third party system so that they can process them 
 and send discounts to specific users.
 
 ### Use case
-- At the end of they, the system generates reports as CSV files
-- those CSV files are automatically uploaded to the system
+- At the end of the day, the system generates reports as CSV files
+- those CSV files are being automatically uploaded to the system
 - each line in the CSV file contains the product title,
-product category, email of the user who bought it and the cost
+product category, email of the user who bought it, and the cost
 - each file has a unique id that we can use to retrieve 
 all the items that were created in that single file upload
 - a typical CSV file can contain ~ 2000-3000 items
-- in a normal day 100-200 files are being uploaded,
-on weekends ~ 400-500
+- in a normal day 100-200 files are being uploaded
+- on weekends ~ 400-500
 - we can only query the orders by file upload id
 ```
 GET /fist-party/api/orders?file-id=1

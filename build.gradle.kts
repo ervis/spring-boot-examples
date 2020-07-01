@@ -1,3 +1,4 @@
+import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
@@ -5,7 +6,7 @@ buildscript {
         mavenCentral()
         jcenter()
         maven {
-            url = uri("http://repo.spring.io/libs-release")
+            url = uri(Repositories.springIO)
         }
     }
 }
@@ -13,19 +14,20 @@ plugins {
     application
     idea
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    kotlin("jvm") version "1.3.61" apply false
+    id(Plugins.kotlin) version PluginVersion.kotlin apply false
 
     // Apply the application plugin to add support for building a CLI application.
-    id("io.spring.dependency-management") version "1.0.6.RELEASE" apply false
-    id("org.springframework.boot") version "2.2.5.RELEASE" apply false
+    id(Plugins.springDependencyManagement) version PluginVersion.springDependencyManagement apply false
+    id(Plugins.springBoot) version PluginVersion.springBoot apply false
 
-    id("org.jetbrains.kotlin.plugin.allopen") version "1.3.61" apply false
-    id("org.jetbrains.kotlin.plugin.noarg") version "1.3.61" apply false
-    id("org.jetbrains.kotlin.plugin.jpa") version "1.3.61" apply false
-    id("org.jetbrains.kotlin.plugin.spring") version "1.3.61" apply false
+    id(Plugins.kotlinAllOpen) version PluginVersion.kotlin apply false
+    id(Plugins.kotlinNoArg) version PluginVersion.kotlin apply false
+    id(Plugins.kotlinJpa) version PluginVersion.kotlin apply false
+    id(Plugins.kotlinSpring) version PluginVersion.kotlin apply false
 
-    kotlin("kapt") version "1.3.61" apply false
+    id(Plugins.kotlinKapt) version PluginVersion.kotlin apply false
 }
+
 allprojects {
     apply(plugin = "idea")
 
@@ -42,23 +44,23 @@ allprojects {
 }
 subprojects {
     apply {
-        plugin("java")
+        plugin(Plugins.java)
 
-        plugin("org.springframework.boot")
-        plugin("io.spring.dependency-management")
+        plugin(Plugins.springBoot)
+        plugin(Plugins.springDependencyManagement)
 
-        plugin("org.jetbrains.kotlin.jvm")
-        plugin("org.jetbrains.kotlin.plugin.spring")
-        plugin("org.jetbrains.kotlin.kapt")
-        plugin("kotlin-noarg")
-        plugin("kotlin-jpa")
+        plugin(Plugins.kotlin)
+        plugin(Plugins.kotlinSpring)
+        plugin(Plugins.kotlinKapt)
+        plugin(Plugins.kotlinNoArg)
+        plugin(Plugins.kotlinJpa)
 
     }
     repositories {
         mavenCentral()
         jcenter()
         maven {
-            url = uri("http://repo.spring.io/libs-release")
+            url = uri(Repositories.springIO)
         }
     }
     val implementation by configurations
@@ -73,38 +75,38 @@ subprojects {
         implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 
         // Use the Kotlin JDK 8 standard library.
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-        implementation("org.jetbrains.kotlin:kotlin-reflect")
-        "kapt"("org.springframework.boot:spring-boot-configuration-processor")
+        implementation(Libs.kotlinStdJDK8)
+        implementation(Libs.kotlinReflect)
+        implementation(Libs.kotlinJackson)
 
 
         // spring-starters
-        implementation("org.springframework.boot:spring-boot-starter-web")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+        implementation(SpringBootStarter.web)
+        implementation(SpringCloud.sleuth)
+        "kapt"(Kapt.springBootConfigurationProcessor)
 
         // Use the Kotlin test library.
         testImplementation("org.jetbrains.kotlin:kotlin-test")
 
         // Use the Kotlin JUnit integration.
-        testImplementation("org.junit.jupiter:junit-jupiter-api")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
-        testRuntimeOnly("org.jetbrains.kotlin:kotlin-test-junit5")
+        testImplementation(TestLibs.jupyter)
+        testRuntimeOnly(TestLibs.jupyterEngine)
+        testRuntimeOnly(TestLibs.kotlinJunit5)
         testImplementation("com.ninja-squad:springmockk:1.1.3")
-        testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        testImplementation(SpringBootStarter.test) {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
             exclude(module = "mockito-core")
         }
         // security in tests
-        implementation("org.springframework.security:spring-security-test")
-        testImplementation("org.mockito:mockito-junit-jupiter:3.2.4")
-        testImplementation("org.hamcrest:hamcrest:2.1")
+        implementation(TestLibs.springSecurity)
+        testImplementation(TestLibs.mockito)
+        testImplementation(TestLibs.hamcrest)
+    }
 
-
-        compileOnly(Libs.lombok)
-        annotationProcessor(Libs.lombok)
-
-        testCompileOnly(Libs.lombok)
-        testAnnotationProcessor(Libs.lombok)
+    configure<DependencyManagementExtension> {
+        imports {
+            mavenBom(MavenBom.springCloud)
+        }
     }
     tasks.test {
         useJUnitPlatform()
@@ -116,6 +118,7 @@ subprojects {
         kotlinOptions.jvmTarget = "1.8"
     }
 }
+
 application {
     // Define the main class for the application.
     mainClassName = "springboot.AppKt"
@@ -123,7 +126,7 @@ application {
 
 tasks {
     getByName<Wrapper>("wrapper") {
-        gradleVersion = "6.2.2"
+        gradleVersion = "6.5.1"
         distributionType = Wrapper.DistributionType.ALL
     }
 }
