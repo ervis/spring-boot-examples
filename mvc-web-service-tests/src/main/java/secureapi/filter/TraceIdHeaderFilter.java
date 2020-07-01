@@ -30,8 +30,9 @@ public class TraceIdHeaderFilter extends OncePerRequestFilter {
         try {
             filterChain.doFilter(request, response);
         } finally {
-            // TODO(ervis) do we need the check if the response is committed?
-            response.addHeader(TRACE_ID_HEADER, tracingService.traceId());
+            if (!response.isCommitted()) {
+                response.addHeader(TRACE_ID_HEADER, tracingService.traceId());
+            }
         }
     }
 }
