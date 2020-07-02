@@ -1,6 +1,7 @@
 object Repositories {
     const val springIO = "http://repo.spring.io/libs-release"
 }
+
 object Plugins {
     const val java = "java"
     const val springBoot = "org.springframework.boot"
@@ -24,11 +25,17 @@ object PluginVersion {
 
 object Libs {
     const val h2 = "com.h2database:h2"
-    const val flyway = "org.flywaydb:flyway-core:6.3.1"
+    const val postgres = "org.postgresql:postgresql:${Version.postgres}"
+    const val flyway = "org.flywaydb:flyway-core:${Version.flyway}"
     const val sleuth = "org.springframework.cloud:spring-cloud-starter-sleuth"
     const val kotlinStdJDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect"
     const val kotlinJackson = "com.fasterxml.jackson.module:jackson-module-kotlin"
+}
+
+object Version {
+    const val postgres = "42.2.14"
+    const val flyway = "6.5.0"
 }
 
 object TestLibs {
@@ -55,6 +62,7 @@ object SpringCloud {
 object TestContainers {
     const val postgres = "org.testcontainers:postgresql:1.13.0"
 }
+
 object MavenBom {
     const val springCloud = "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR3"
 }

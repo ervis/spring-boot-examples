@@ -8,5 +8,5 @@ dependencies {
 
     testImplementation(TestContainers.postgres)
 
-    runtimeOnly(Libs.h2)
+    runtimeOnly(Libs.postgres)
 }

@@ -2,12 +2,16 @@ package springboot.jpa
 
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ContextConfiguration
 import springboot.jpa.entities.TvShow
+import springboot.jpa.repositories.TvShowRepository
 import java.util.*
 import kotlin.test.assertEquals
 
-@DataJpaTest
+@SpringBootTest
+@ContextConfiguration(classes = [JpaConfig::class])
 class JpaTest {
 
     @Autowired
@@ -16,8 +20,9 @@ class JpaTest {
     @Test
     internal fun save_and_get() {
 
+        val tvShowId = UUID.randomUUID().toString()
         val tvShow = TvShow(
-                tvShowId = UUID.randomUUID().toString(),
+                tvShowId = tvShowId,
                 name = "Dr House",
                 releaseDate = "November 16, 2004",
                 onNetflix = false
@@ -25,7 +30,7 @@ class JpaTest {
 
         tvShowRepository.save(tvShow)
 
-        val s = tvShowRepository.findByName("Dr House")
+        val s = tvShowRepository.findById(tvShowId).get()
 
         assertEquals("Dr House", s.name)
     }
