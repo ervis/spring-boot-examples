@@ -31,6 +31,8 @@ object Libs {
     const val kotlinStdJDK8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect"
     const val kotlinJackson = "com.fasterxml.jackson.module:jackson-module-kotlin"
+    const val lombok = "org.projectlombok:lombok:1.18.12"
+    const val vavr = "io.vavr:vavr:0.10.2"
 }
 
 object Version {
@@ -45,6 +47,7 @@ object TestLibs {
     const val springSecurity = "org.springframework.security:spring-security-test"
     const val mockito = "org.mockito:mockito-junit-jupiter:3.2.4"
     const val hamcrest = "org.hamcrest:hamcrest:2.1"
+    const val wiremock = "com.github.tomakehurst:wiremock-jre8:2.27.0"
 }
 
 object SpringBootStarter {

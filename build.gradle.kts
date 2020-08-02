@@ -83,11 +83,18 @@ subprojects {
         implementation(Libs.kotlinReflect)
         implementation(Libs.kotlinJackson)
 
+        // vavr
+        implementation(Libs.vavr)
 
         // spring-starters
         implementation(SpringBootStarter.web)
         implementation(SpringCloud.sleuth)
         "kapt"(Kapt.springBootConfigurationProcessor)
+        compileOnly(Libs.lombok)
+        annotationProcessor(Libs.lombok)
+
+        testCompileOnly(Libs.lombok)
+        testAnnotationProcessor(Libs.lombok)
 
         // Use the Kotlin test library.
         testImplementation("org.jetbrains.kotlin:kotlin-test")
