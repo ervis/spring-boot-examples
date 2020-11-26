@@ -9,6 +9,7 @@
 
 rootProject.name = "spring-boot-examples"
 include(
+        "spring-mvc:freemaker-menu",
         "jpa-tests",
         "mvc-web-service-tests",
         "mvc-webapp-tests",

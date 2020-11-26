@@ -1,0 +1,75 @@
+{
+  "0": {
+    "layoutOptions": {
+      "name": "Layout Options",
+      "title": "menu.layoutOptions",
+      "permission": "admin",
+      "order": 0,
+      "icon": "nav-icon fas fa-tachometer-alt",
+      "items": {
+        "0": {
+          "name": "Top Navigation",
+          "title": "menu.navigation.top",
+          "permission": "admin",
+          "order": 0,
+          "url": "/navigation/top",
+          "icon": "far fa-circle nav-icon"
+        },
+        "1": {
+          "name": "Top Navigation + Sidebar",
+          "title": "menu.navigation.with-sidebar",
+          "permission": "admin",
+          "order": 0,
+          "url": "/navigation/sidebar",
+          "icon": "far fa-circle nav-icon"
+        }
+      }
+    }
+  },
+  "1": {
+    "Charts": {
+      "name": "Charts",
+      "title": "menu.charts",
+      "permission": "admin",
+      "order": 1,
+      "icon": "nav-icon fas fa-chart-pie",
+      "items": {
+        "0": {
+          "name": "chartjs",
+          "title": "menu.charts.chartjs",
+          "permission": "admin",
+          "order": 0,
+          "url": "/charts/chart-js",
+          "icon": "far fa-circle nav-icon"
+        },
+        "1": {
+          "name": "Flot",
+          "title": "menu.charts.flot",
+          "permission": "admin",
+          "order": 0,
+          "url": "/charts/flot",
+          "icon": "far fa-circle nav-icon"
+        }
+      }
+    }
+  },
+  "2": {
+    "UI Elements": {
+      "name": "UI Elements",
+      "title": "menu.uiElements",
+      "permission": "admin",
+      "order": 1,
+      "icon": "nav-icon fas fa-tree",
+      "items": {
+        "0": {
+          "name": "general",
+          "title": "menu.uiEleements.general",
+          "permission": "admin",
+          "order": 0,
+          "url": "/ui-elements/general",
+          "icon": "far fa-circle nav-icon"
+        }
+      }
+    }
+  }
+}
