@@ -1,7 +1,5 @@
-assets/
 node_modules/
 build/
-dist/
 out/
 .idea/
 .gradle/

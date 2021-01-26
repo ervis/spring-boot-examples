@@ -1,9 +1,0 @@
-{
-  "request": {
-    "url": "/delayed/500ms"
-  },
-  "response": {
-    "status": 200,
-    "fixedDelayMilliseconds": 500
-  }
-}

@@ -13,6 +13,5 @@ include(
         "jpa-tests",
         "mvc-web-service-tests",
         "mvc-webapp-tests",
-        "spring-saga-pattern",
         "stability-patterns"
 )

@@ -137,7 +137,7 @@ application {
 
 tasks {
     getByName<Wrapper>("wrapper") {
-        gradleVersion = "6.5.1"
+        gradleVersion = "6.7.1"
         distributionType = Wrapper.DistributionType.ALL
     }
 }
